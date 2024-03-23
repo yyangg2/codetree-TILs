@@ -1,3 +1,5 @@
+import sys
+
 def shift(arr):
     temp = arr[-1]
     for i in range(len(arr)-1, 0, -1):
@@ -23,6 +25,11 @@ def change(arr):
 
 
 arr = list(input())
+
+if len(arr) == 1:
+    print(2)
+    sys.exit()
+
 ans = change(arr)
 for i in range(1, len(arr)):
     shiftArr = shift(arr)
