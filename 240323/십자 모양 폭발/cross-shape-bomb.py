@@ -7,17 +7,27 @@ r, c = map(int,input().split())
 v = grid[r][c]
 
 
+def checkRow(row):
+    return row >= 1 and row <= n
+
+def checkCol(col):
+    return col >=1 and col <= n
+
 for row in range(r, r+v):
-    grid[row][c] = 0
+    if checkRow(row):
+        grid[row][c] = 0
 
 for row in range(r, r-v, -1):
-    grid[row][c] = 0
+    if checkRow(row):
+        grid[row][c] = 0
 
 for col in range(c, c+v):
-    grid[r][col] = 0
+    if checkCol(col):
+        grid[r][col] = 0
 
 for col in range(c, c-v, -1):
-    grid[r][col] = 0
+    if checkCol(col):
+        grid[r][col] = 0
 
 temp = [[0]*(n+1) for _ in range(n+1)]
 
